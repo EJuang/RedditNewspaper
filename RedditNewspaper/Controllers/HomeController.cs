@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RedditNewspaper.Models;
 
 namespace RedditNewspaper.Controllers
 {
@@ -13,18 +14,10 @@ namespace RedditNewspaper.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Newspaper(SubredditWrapper model)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(model);
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

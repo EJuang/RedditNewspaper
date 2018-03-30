@@ -1,5 +1,12 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<script type="text/javascript" src="~/Content/redditapi.js"></script>
-<div id="headlines"></div>
+@model RedditNewspaper.Models.SubredditWrapper
+<script src="~/Content/redditapi.js"></script>
+@using (Html.BeginForm("Newspaper", "Home", FormMethod.Get))
+{
+    @Html.TextBoxFor(m => m.Subreddit)
+
+    <button id="submitButton">Newspaper-ize!</button>
+}
+

@@ -1,5 +1,9 @@
 ﻿.thumbnail {
-    height: 200px;
+    height: 300px;
     width: auto;
-    filter: sepia(100%);
+    filter: sepia(80%);
+}
+
+.rowSpacer {
+    margin: 10px;
 }

@@ -1,23 +1,28 @@
 ﻿
 $(document).ready(function () {
 
-    var urlString = "https://www.reddit.com/r/usnews.json";
+    var subreddit = $("#srquery").html();
+    var urlString = "https://www.reddit.com/r/" + subreddit + ".json";
 
     $.ajax({
         url: urlString,
         dataType: "json"
     }).done(function (response) {
+        console.log(response);
 
-        for (i = 0; i < 5; i++) {
-            var headline = response.data.children[i].data.title;
-            var imgUrl = response.data.children[i].data.preview.images[0].source.url;
-            $("#headlines").append("<div>");
-            $("#headlines").append('<img class="thumbnail" src="' + imgUrl + '"/>');
-            $("#headlines").append("<p>" + headline + "</p>");
-            $("#headlines").append("</div>");
+        //Construct Newspaper Title
+        var prefixedSubreddit = response.data.children[0].data.subreddit_name_prefixed;
+        $("#newspaperTitle").html("THE " + prefixedSubreddit + " TIMES");
 
-        }
+        //Construct Headline
     });
 
+
+    $("#Subreddit").keyup(function (event) {
+        if (event.keyCode === 13) {
+            $("#submitButton").click();
+        }
+
+    });
 
 });
