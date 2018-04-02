@@ -19,5 +19,7 @@ namespace RedditNewspaper.Controllers
             return View(model);
         }
 
+        //TODO API, use HTML_Agility_Pack to gather content
+
     }
 }

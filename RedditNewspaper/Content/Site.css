@@ -1,7 +1,14 @@
-﻿.thumbnail {
-    height: 300px;
-    width: auto;
-    filter: sepia(80%);
+﻿body {
+    font-family: 'Century Schoolbook';
+}
+
+#newspaperTitle {
+    font-family: 'Old English Text MT';
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 .rowSpacer {
