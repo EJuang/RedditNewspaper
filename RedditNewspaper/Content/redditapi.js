@@ -29,22 +29,7 @@ $(document).ready(function () {
             if (firstComment !== null) {
                 $("#frontQuote").html('<i>"' + firstComment + ' - ' + firstCommentAuthor + '"</i>');
             }
-            });
-
-        //TODO: Figure out CORS on other domains (jsonp?)
-        ////Procure Main Content
-        ////SMMRY API Key: AAC7171ECF
-
-        //var sourceURL = response.data.children[0].data.url;
-        //console.log(sourceURL);
-        //$.ajax({
-        //    url: "http://api.smmry.com/&SM_API_KEY=AAC7171ECF&SM_URL=" + sourceURL ,
-        //    dataType: "json"
-        //}).done(function (content) {
-        //    console.log(content);
-        //});
-
-        //TODO: Use HTML Agility Pack to try to scrape content from web pages, create API, call from client
+        });
 
         //Left Panel Story
         var leftPanelTitle = response.data.children[1].data.title;
