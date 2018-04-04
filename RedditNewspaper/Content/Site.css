@@ -6,11 +6,20 @@
     font-family: 'Old English Text MT';
 }
 
+
 img {
     width: 100%;
     height: auto;
+    margin-top: 10px;
 }
 
 .rowSpacer {
     margin: 10px;
+}
+
+#mainPhoto {
+    display: inline-block;
+    float: left;
+    width: 60%;
+    margin: 20px;
 }

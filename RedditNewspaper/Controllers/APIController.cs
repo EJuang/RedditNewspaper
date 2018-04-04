@@ -10,7 +10,6 @@ namespace RedditNewspaper.Controllers
     {
         // GET: API
         [HttpGet]
-        [Route("api")]
         public ActionResult Index(string targetURL)
         {
             string articleContent = HTMLScraper.GetArticleContent(targetURL);
