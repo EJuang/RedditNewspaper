@@ -46,22 +46,22 @@ $(document).ready(function () {
             $("#frontContent").html("<strong>" + articleContent.substr(0, 1) + "</strong>" + articleContent.substr(1, 2000) + "<br /><i>...continued on page 2</i>");
         });
 
-        //Left Panel title, image
-        var leftPanelTitle = response.data.children[1].data.title;
-        var leftPanelImgURL = response.data.children[1].data.preview.images[0].source.url;
-        var leftPanelAuthor = response.data.children[1].data.author;
-        $("#leftPanelTitle").html(leftPanelTitle);
-        $("#leftPanelPhoto").html('<img src="' + leftPanelImgURL + '"/>');
-        $("#leftPanelAuthor").html("Posted by " + leftPanelAuthor);
+        //Right Panel title, image
+        var rightPanelTitle = response.data.children[1].data.title;
+        var rightPanelImgURL = response.data.children[1].data.preview.images[0].source.url;
+        var rightPanelAuthor = response.data.children[1].data.author;
+        $("#rightPanelTitle").html(rightPanelTitle);
+        $("#rightPanelPhoto").html('<img src="' + rightPanelImgURL + '"/>');
+        $("#rightPanelAuthor").html("Posted by " + rightPanelAuthor);
 
-        //Left Panel story content
-        var leftpaneltargetURL = response.data.children[1].data.url;
-        var leftpanelapiURL = "/api?targetURL=" + leftpaneltargetURL;
+        //right Panel story content
+        var rightpaneltargetURL = response.data.children[1].data.url;
+        var rightpanelapiURL = "/api?targetURL=" + rightpaneltargetURL;
         $.ajax({
-            url: leftpanelapiURL,
+            url: rightpanelapiURL,
             dataType: "json"
-        }).done(function (leftpanelarticleContent) {
-            $("#leftPanelContent").html(leftpanelarticleContent.substr(0, 600) + "<br /><i>...continued on page 3</i>");
+        }).done(function (rightpanelarticleContent) {
+            $("#rightPanelContent").html(rightpanelarticleContent.substr(0, 600) + "<br /><i>...continued on page 3</i>");
         });
     });
 
