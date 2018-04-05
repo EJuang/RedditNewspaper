@@ -1,16 +1,17 @@
 ﻿body {
     font-family: 'Century Schoolbook';
+    background-color: floralwhite;
 }
 
 #newspaperTitle {
     font-family: 'Old English Text MT';
 }
 
-
 img {
     width: 100%;
     height: auto;
     margin-top: 10px;
+    filter: sepia(80%);
 }
 
 .rowSpacer {
@@ -21,5 +22,6 @@ img {
     display: inline-block;
     float: left;
     width: 60%;
-    margin: 20px;
+    margin-right: 20px;
+    background-color: antiquewhite;
 }

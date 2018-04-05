@@ -18,8 +18,10 @@ $(document).ready(function () {
         //Construct frontpage headline, frontpage photo
         var headline = response.data.children[0].data.title;
         var imgURL = response.data.children[0].data.preview.images[0].source.url;
+        var frontAuthor = response.data.children[0].data.author;
         $("#headline").html(headline);
         $("#frontPhoto").html('<img id="frontPhotoImg" class="card-img-top" src="' + imgURL + '"/>');
+        $("#frontAuthor").html("Posted by " + frontAuthor);
 
         //Call for headline story comment
         var permalink = response.data.children[0].data.permalink;
@@ -41,23 +43,25 @@ $(document).ready(function () {
             url: apiURL,
             dataType: "json"
         }).done(function (articleContent) {
-            $("#frontContent").html(articleContent.substring(0, 2500) + "<br /><i>...continued on page 2</i>");
+            $("#frontContent").html("<strong>" + articleContent.substr(0, 1) + "</strong>" + articleContent.substr(1, 2000) + "<br /><i>...continued on page 2</i>");
         });
 
         //Left Panel title, image
         var leftPanelTitle = response.data.children[1].data.title;
         var leftPanelImgURL = response.data.children[1].data.preview.images[0].source.url;
+        var leftPanelAuthor = response.data.children[1].data.author;
         $("#leftPanelTitle").html(leftPanelTitle);
         $("#leftPanelPhoto").html('<img src="' + leftPanelImgURL + '"/>');
+        $("#leftPanelAuthor").html("Posted by " + leftPanelAuthor);
 
         //Left Panel story content
         var leftpaneltargetURL = response.data.children[1].data.url;
         var leftpanelapiURL = "/api?targetURL=" + leftpaneltargetURL;
         $.ajax({
-            url: apiURL,
+            url: leftpanelapiURL,
             dataType: "json"
-        }).done(function (articleContent) {
-            $("#leftPanelContent").html(articleContent.substring(0,500) + "<br /><i>...continued on page 3</i>");
+        }).done(function (leftpanelarticleContent) {
+            $("#leftPanelContent").html(leftpanelarticleContent.substr(0, 600) + "<br /><i>...continued on page 3</i>");
         });
     });
 
