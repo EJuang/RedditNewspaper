@@ -1,10 +1,24 @@
 ﻿body {
-    font-family: 'Century Schoolbook';
+    font-family: 'Cardo', serif;
     background-color: floralwhite;
 }
 
+ul {
+    list-style-type: none;
+}
+
+#submitButton {
+    margin: 5px;
+    width: 50%;
+}
+
+#subredditTextBox {
+    width: 50%;
+}
+
 #newspaperTitle {
-    font-family: 'Old English Text MT';
+    font-family: 'Pirata One',monospace;
+    font-size: 70px;
 }
 
 img {
@@ -25,3 +39,4 @@ img {
     margin-right: 20px;
     background-color: antiquewhite;
 }
+

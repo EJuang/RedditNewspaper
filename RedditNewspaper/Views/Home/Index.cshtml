@@ -2,11 +2,34 @@
     ViewBag.Title = "Home Page";
 }
 @model RedditNewspaper.Models.SubredditWrapper
-<script src="~/Content/redditapi.js"></script>
+
 @using (Html.BeginForm("Newspaper", "Home", FormMethod.Get))
 {
-    @Html.TextBoxFor(m => m.Subreddit)
-
-    <button id="submitButton">Newspaper-ize!</button>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col text-center">
+            <h1 style="font-family: 'Pirata One';font-size: 50px;">Reddit Newspaper</h1>
+            <p>
+                Reddit Newspaper is a simple application that takes the top stories from news subreddits,
+                and produces a print newspaper style front page out of the top two headlines.
+                <a href="https://en.wikipedia.org/wiki/Reddit">What is Reddit?</a>
+            </p>
+            <p>Enter a subreddit below to turn into a print newspaper!</p>
+            @Html.TextBoxFor(m => m.Subreddit, new { @id = "subredditTextBox", placeholder = "ex: usnews" }) <br />
+            <button id="submitButton">Newspaper-ize!</button>
+        </div>
+        <div class="col-4"></div>
+    </div>
 }
+<div class="row" style="padding: 10px;">
+    <div class="col text-center">
+        <ul>
+            <li>Some subreddits won't work well, so here is a list of suggested subreddits:</li>
+            <li>usnews</li>
+            <li>upliftingnews</li>
+            <li>qualitynews</li>
+            <li>newsoftheweird</li>
+        </ul>
+    </div>
+</div>
 

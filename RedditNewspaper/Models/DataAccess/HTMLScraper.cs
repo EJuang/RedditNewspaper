@@ -12,6 +12,8 @@ namespace RedditNewspaper.Models.DataAccess
         {
             string articleContent = "";
 
+            try
+            {
             HtmlWeb web = new HtmlWeb();
             var htmlDoc = web.Load(targetURL);
             IList<HtmlNode> nodes = htmlDoc.QuerySelectorAll("body p");
@@ -22,6 +24,11 @@ namespace RedditNewspaper.Models.DataAccess
             }
 
             return articleContent;
+            }
+            catch
+            {
+                return "There was an error in retreiving this article's content.";
+            }
         }
     }
 }

@@ -5,14 +5,12 @@
 @using System.Globalization
 @model RedditNewspaper.Models.SubredditWrapper
 
-<script type="text/javascript" src="~/Content/redditapi.js"></script>
-
 <span id="srquery" class="invisible">@Model.Subreddit</span>
 <div class="container">
     <div class="row">
-        <div class="col-md-2 border border-dark"><p>The Front Page <br /> of the What?</p></div>
+        <div class="col-md-2 border border-dark"><p class="text-center">The Front Page <br /> of the What?</p></div>
         <div class="col-md-8"><h1 id="newspaperTitle" class="text-center"></h1></div>
-        <div class="col-md-2 border border-dark"><p>Your source for the finest news from the magical ether.</p></div>
+        <div class="col-md-2 border border-dark"><p class="text-center">Your source for the finest news from the magical ether.</p></div>
     </div>
     <div class="rowSpacer"></div>
     <div class="row border-top border-bottom border-dark">
@@ -28,7 +26,7 @@
             <h1 id="headline" class="text-center"></h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row border-left border-right border-dark" style="padding:5px;">
         <div class="col-md-9">
             <div id="mainPhoto" class="card">
                 <div id="frontPhoto"></div>

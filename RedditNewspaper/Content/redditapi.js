@@ -43,7 +43,7 @@ $(document).ready(function () {
             url: apiURL,
             dataType: "json"
         }).done(function (articleContent) {
-            $("#frontContent").html("<strong>" + articleContent.substr(0, 1) + "</strong>" + articleContent.substr(1, 2000) + "<br /><i>...continued on page 2</i>");
+            $("#frontContent").html(articleContent.substr(0, 2000) + "<br /><i>...continued on page 2</i>");
         });
 
         //Right Panel title, image
@@ -72,5 +72,7 @@ $(document).ready(function () {
         }
 
     });
+
+    $("#subredditTextBox").focus();
 
 });
